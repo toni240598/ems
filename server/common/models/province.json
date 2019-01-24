@@ -1,0 +1,32 @@
+{
+  "name": "province",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "geopoint",
+      "required": true
+    },
+    "zoom": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cities": {
+      "type": "hasMany",
+      "model": "city",
+      "foreignKey": "province_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,33 @@
+{
+  "name": "security_site",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "security_id": {
+      "type": "number",
+      "required": true
+    },
+    "site_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "security": {
+      "type": "belongsTo",
+      "model": "security",
+      "foreignKey": "security_id"
+    },
+    "site": {
+      "type": "belongsTo",
+      "model": "site",
+      "foreignKey": "site_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

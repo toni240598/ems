@@ -1,0 +1,32 @@
+{
+  "name": "access_key",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "work_order_id": {
+      "type": "number",
+      "required": true
+    },
+    "discobj_id": {
+      "type": "number",
+      "required": true
+    },
+    "key": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "workOrder": {
+      "type": "belongsTo",
+      "model": "work_order",
+      "foreignKey": "work_order_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

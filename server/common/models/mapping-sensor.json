@@ -1,0 +1,37 @@
+{
+  "name": "mapping_sensor",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sensor_id": {
+      "type": "number",
+      "required": true
+    },
+    "channel_id": {
+      "type": "number",
+      "required": true
+    },
+    "managedobj_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sensor": {
+      "type": "belongsTo",
+      "model": "sensor",
+      "foreignKey": "sensor_id"
+    },
+    "channel": {
+      "type": "belongsTo",
+      "model": "channel",
+      "foreignKey": "channel_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

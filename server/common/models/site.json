@@ -1,0 +1,59 @@
+{
+  "name": "site",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "district_id": {
+      "type": "number",
+      "required": true
+    },
+    "location": {
+      "type": "geopoint",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "zoom": {
+      "type": "number",
+      "required": true
+    },
+    "discobj_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "district": {
+      "type": "belongsTo",
+      "model": "district",
+      "foreignKey": "district_id"
+    },
+    "managedObjects": {
+      "type": "hasMany",
+      "model": "managed_object",
+      "foreignKey": "site_id"
+    },
+    "securitySites": {
+      "type": "hasMany",
+      "model": "security_site",
+      "foreignKey": "site_id"
+    },
+    "items": {
+      "type": "hasMany",
+      "model": "item",
+      "foreignKey": "site_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

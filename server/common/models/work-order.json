@@ -1,0 +1,56 @@
+{
+  "name": "work_order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "worker_id": {
+      "type": "number",
+      "required": true
+    },
+    "site_id": {
+      "type": "number",
+      "required": true
+    },
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "end": {
+      "type": "date",
+      "required": true
+    },
+    "project": {
+      "type": "string",
+      "required": true
+    },
+    "activity": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accessKeys": {
+      "type": "hasMany",
+      "model": "access_key",
+      "foreignKey": "work_order_id"
+    },
+    "site": {
+      "type": "belongsTo",
+      "model": "site",
+      "foreignKey": "site_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
