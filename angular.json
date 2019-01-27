@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ems": {
+    "ems-ui": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -12,7 +12,8 @@
         "@schematics/angular:component": {
           "styleext": "scss",
           "spec" : false,
-          "inlineStyle": true
+          "inlineStyle": true,
+          "module": "app"
         },
         "@schematics/angular:module": {
           "flat": true,
@@ -31,7 +32,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ems",
+            "outputPath": "dist/ems-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -42,6 +43,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -76,18 +78,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ems:build"
+            "browserTarget": "ems-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ems:build:production"
+              "browserTarget": "ems-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ems:build"
+            "browserTarget": "ems-ui:build"
           }
         },
         "test": {
@@ -122,7 +124,7 @@
         }
       }
     },
-    "ems-e2e": {
+    "ems-ui-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -131,11 +133,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ems:serve"
+            "devServerTarget": "ems-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ems:serve:production"
+              "devServerTarget": "ems-ui:serve:production"
             }
           }
         },
@@ -151,5 +153,5 @@
       }
     }
   },
-  "defaultProject": "ems"
+  "defaultProject": "ems-ui"
 }

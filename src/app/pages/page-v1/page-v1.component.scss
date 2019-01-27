@@ -1,0 +1,56 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+    -moz-transition: 0.4s ease-in-out all;
+    -webkit-transition: 0.4s ease-in-out all;
+    transition: 0.4s ease-in-out all;
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    display: table;
+    width: 100%;
+    z-index: 999;
+    padding:15px;
+    position: relative;
+}
+
+.logo span {
+    font-size: 18px;
+    color: #3C4858;
+}
+
+.logo img {
+    margin-top: -10px;
+    height:35px;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+ul li a {
+     color: #474747;
+     font-size: 14px;
+}
+
+ul li a:hover {
+    color: #ff513f;
+}
+
+.active {
+  color: #ff513f;
+}

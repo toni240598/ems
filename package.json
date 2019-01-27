@@ -1,5 +1,5 @@
 {
-  "name": "ems",
+  "name": "ems-ui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -24,6 +24,8 @@
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
+    "ngx-toastr": "^9.1.1",
+    "rollbar": "^2.5.2",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

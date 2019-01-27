@@ -10,4 +10,8 @@ export class Province extends GeoLocation {
   id: number;
   label: string;
 
+  getMetadata(): Array<string | number> {
+    return [this.id, this.label, this.getLat(), this.getLng(), this.zoom];
+  }
+
 }
