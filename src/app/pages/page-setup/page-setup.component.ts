@@ -6,7 +6,7 @@ import { CityComponent } from 'src/app/setup/city/city.component';
 @Component({
   selector: 'app-page-setup',
   template: `
-    <app-menu [pages]="pages"></app-menu>
+    <app-menu [pages]="pages" [localIndexId]="'setupPageIndex'"></app-menu>
   `,
   styles: []
 })
