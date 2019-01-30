@@ -28,5 +28,4 @@ export class CityComponent implements OnInit {
            _error => this.toastr.error(_error));
       }, _error => this.toastr.error(_error));
   }
-
 }

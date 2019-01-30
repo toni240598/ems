@@ -17,6 +17,13 @@ import { MaterialModule } from './material.module';
 import { MenuComponent } from './shared/menu/menu.component';
 import { ImageDirective } from './shared/image.directive';
 import { CityComponent } from './setup/city/city.component';
+import { DistrictComponent } from './setup/district/district.component';
+import { SiteComponent } from './setup/site/site.component';
+import { EqTypeComponent } from './setup/eq-type/eq-type.component';
+import { PerfObjComponent } from './setup/perf-obj/perf-obj.component';
+import { SecurityComponent } from './setup/security/security.component';
+import { SecuritySiteComponent } from './setup/security-site/security-site.component';
+import { ChannelComponent } from './setup/channel/channel.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +45,14 @@ import { CityComponent } from './setup/city/city.component';
     MapViewComponent,
     LoginComponent,
     ImageDirective,
-    CityComponent
+    CityComponent,
+    DistrictComponent,
+    SiteComponent,
+    EqTypeComponent,
+    PerfObjComponent,
+    SecurityComponent,
+    SecuritySiteComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +72,14 @@ import { CityComponent } from './setup/city/city.component';
   entryComponents: [
     // setup
     ProvinceComponent,
-    CityComponent
+    CityComponent,
+    DistrictComponent,
+    SiteComponent,
+    EqTypeComponent,
+    PerfObjComponent,
+    SecurityComponent,
+    SecuritySiteComponent,
+    ChannelComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
