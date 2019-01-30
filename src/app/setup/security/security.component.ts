@@ -20,7 +20,7 @@ export class SecurityComponent implements OnInit {
       .subscribe(
         _data => _data,
         _error => this.toastr.error(_error)
-      ), _error => this.toastr.error(_error)
-    })
+      );
+    }, _error => this.toastr.error(_error));
   }
 }

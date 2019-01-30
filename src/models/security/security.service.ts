@@ -10,7 +10,7 @@ import { environment } from "src/environments/environment";
 
 export class SecurityService extends RestApi<Security> {
     constructor(http: HttpClient) {
-        super(http)
+        super(http);
         this.config(`${environment.host}/api/securities`, Security);
     }
 }

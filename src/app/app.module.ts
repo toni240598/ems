@@ -20,10 +20,10 @@ import { CityComponent } from './setup/city/city.component';
 import { DistrictComponent } from './setup/district/district.component';
 import { SiteComponent } from './setup/site/site.component';
 import { EqTypeComponent } from './setup/eq-type/eq-type.component';
-import { PerfObjComponent } from './setup/perf-obj/perf-obj.component';
+import { PerfObjectComponent } from './setup/perf-object/perf-object.component';
+import { SensorTypeComponent } from './setup/sensor-type/sensor-type.component';
 import { SecurityComponent } from './setup/security/security.component';
-import { SecuritySiteComponent } from './setup/security-site/security-site.component';
-import { ChannelComponent } from './setup/channel/channel.component';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +36,13 @@ import { ChannelComponent } from './setup/channel/channel.component';
     // setup
     ProvinceComponent,
     FormProvinceComponent,
+    CityComponent,
+    DistrictComponent,
+    SiteComponent,
+    EqTypeComponent,
+    PerfObjectComponent,
+    SensorTypeComponent,
+    SecurityComponent,
 
     // shared
     MapComponent,
@@ -44,15 +51,7 @@ import { ChannelComponent } from './setup/channel/channel.component';
     // other
     MapViewComponent,
     LoginComponent,
-    ImageDirective,
-    CityComponent,
-    DistrictComponent,
-    SiteComponent,
-    EqTypeComponent,
-    PerfObjComponent,
-    SecurityComponent,
-    SecuritySiteComponent,
-    ChannelComponent
+    ImageDirective
   ],
   imports: [
     BrowserModule,
@@ -70,16 +69,15 @@ import { ChannelComponent } from './setup/channel/channel.component';
     })
   ],
   entryComponents: [
-    // setup
+    // page setup
     ProvinceComponent,
     CityComponent,
     DistrictComponent,
     SiteComponent,
     EqTypeComponent,
-    PerfObjComponent,
-    SecurityComponent,
-    SecuritySiteComponent,
-    ChannelComponent
+    PerfObjectComponent,
+    SensorTypeComponent,
+    SecurityComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

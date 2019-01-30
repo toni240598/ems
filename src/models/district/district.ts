@@ -12,13 +12,7 @@ export class District extends GeoLocation {
 
     id: Number;
     label: String;
+    city_id: Number;
     city: City;
 
-    getCityId(): Number {
-        return this.city.id;
-    }
-
-    getCityLabel(): String {
-        return this.city.label;
-    }
 }

@@ -12,7 +12,7 @@ import { map, catchError } from "rxjs/operators";
 
 export class DistrictService extends RestApi<District> {
     constructor(http: HttpClient) {
-        super(http)
+        super(http);
         this.config(`${environment.host}/api/districts`, District);
     }
 
@@ -28,7 +28,7 @@ export class DistrictService extends RestApi<District> {
         }).pipe(
             map(_district => {
                 this.loading = false;
-                const data = _district.map(_district => new District(_district));
+                const data = _district.map(_set => new District(_set));
                 this.data = data;
                 console.log(`[DistrictService] - findDistricts()`, this.data);
                 return data;

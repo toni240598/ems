@@ -64,48 +64,18 @@ export enum Unit {
   Celcius = '°C',
   Voltage = 'V',
   Ampere  = 'A',
-  Percen  = '%'
+  Percen  = '%',
+  NONE    = ''
 }
 
-export class PerfObj {
-    constructor(input?: PerfObj) {
+export class PerfObject {
+    constructor(input?: PerfObject) {
         Object.assign(this, input);
     }
 
-    private id: Number;
-    private name: Performance;
-    private unit: String;
-    private period: Period;
+    id: Number;
+    name: Performance;
+    unit: Unit;
+    period: Period;
 
-    getId(): Number {
-        return this.id;
-    }
-
-    setId(id: Number) {
-        this.id = id;
-    }
-
-    getName(): Performance {
-        return this.name;
-    }
-
-    setName(name: Performance) {
-        this.name = name;
-    }
-
-    getUnit(): String {
-        return this.unit;
-    }
-
-    setUnit(unit: String) {
-        this.unit = unit;
-    }
-
-    getPeriod(): Period {
-        return this.period;
-    }
-
-    setPeriod(period: Period) {
-        this.period = period;
-    }
 }

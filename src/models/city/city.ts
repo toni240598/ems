@@ -10,17 +10,9 @@ export class City extends GeoLocation {
     }
   }
 
-  id: number;
-  label: string;
+  id: Number;
+  label: String;
+  province_id: Number;
   province: Province;
-
-
-  getProvinceId(): number {
-    return this.province.id;
-  }
-
-  getProvinceLabel(): string {
-    return this.province.label;
-  }
 
 }

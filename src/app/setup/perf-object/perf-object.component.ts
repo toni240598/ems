@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfObjService } from 'src/models/perf-obj/perf-obj.service';
 import { ToastrService } from 'ngx-toastr';
+import { PerfObjectService } from 'src/models/perf-object/perf-object.service';
 
 @Component({
-  selector: 'app-perf-obj',
-  templateUrl: './perf-obj.component.html',
+  selector: 'app-perf-object',
+  templateUrl: './perf-object.component.html',
   styles: []
 })
-export class PerfObjComponent implements OnInit {
+export class PerfObjectComponent implements OnInit {
 
   constructor(
-    public perfObjService: PerfObjService,
+    public perfObjService: PerfObjectService,
     private toastr: ToastrService
   ) { }
 
@@ -20,7 +20,8 @@ export class PerfObjComponent implements OnInit {
       .subscribe(
         _data => _data,
         _error => this.toastr.error(_error)
-      ), _error => this.toastr.error(_error)
-    })
+      );
+    }, _error => this.toastr.error(_error));
   }
+
 }

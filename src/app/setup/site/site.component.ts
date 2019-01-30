@@ -25,13 +25,13 @@ export class SiteComponent implements OnInit {
     this.siteService.findTokenRest().subscribe( _success => {
       forkJoin(
         this.provinceService.findAll(),
-        this.cityService.findCities(),
-        this.districtService.findDistricts(),
+        this.cityService.findAll(),
+        this.districtService.findAll(),
         this.siteService.findSites()
       ).subscribe(
         _result => _result,
         _error => this.toastr.error(_error)
-      )
+      );
     }, _error => this.toastr.error(_error));
   }
 

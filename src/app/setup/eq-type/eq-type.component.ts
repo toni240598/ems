@@ -17,10 +17,10 @@ export class EqTypeComponent implements OnInit {
   ngOnInit() {
     this.eqTypeService.findTokenRest().subscribe(_token => {
       this.eqTypeService.findAll()
-      .subscribe( 
+      .subscribe(
         _data => _data,
-        _error => this.toastr.error(_error) 
-      ), _error => this.toastr.error(_error)
-    })
+        _error => this.toastr.error(_error)
+      );
+    }, _error => this.toastr.error(_error));
   }
 }

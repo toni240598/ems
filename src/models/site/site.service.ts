@@ -12,12 +12,12 @@ import { map, catchError } from "rxjs/operators";
 
 export class SiteService extends RestApi<Site> {
     constructor(http: HttpClient) {
-        super(http)
+        super(http);
         this.config(`${environment.host}/api/sites`, Site);
     }
 
     findSites(): Observable<Site[]> {
-        this.loading = true
+        this.loading = true;
         return this.http.get<Site[]>(`${this.url}?filter=${encodeURIComponent(
             JSON.stringify({
                 include: {
@@ -37,12 +37,12 @@ export class SiteService extends RestApi<Site> {
         }).pipe(
             map(_site => {
                 this.loading = false;
-                const data = _site.map(_site => new Site(_site));
+                const data = _site.map(_set => new Site(_set));
                 this.data = data;
                 console.log(`[SiteService] - findSites()`, this.data);
                 return data;
             }),
             catchError(this.handleError)
-        )
+        );
     }
 }

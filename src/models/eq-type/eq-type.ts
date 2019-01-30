@@ -41,40 +41,9 @@ export class EqType {
         Object.assign(this, input);
     }
 
-    private id: Number;
-    private type: Equipment;
-    private brand: String;
-    private series: String;
+    id: Number;
+    type: Equipment;
+    brand: String;
+    series: String;
 
-    getId(): Number {
-        return this.id;
-    }
-
-    setId(id: Number) {
-        this.id = id;
-    }
-
-    getType(): Equipment {
-        return this.type;
-    }
-
-    setType(type: Equipment) {
-        this.type = type;
-    }
-
-    getBrand(): String {
-        return this.brand;
-    }
-    
-    setBrand(brand: String) {
-        this.brand = brand;
-    }
-
-    getSeries(): String {
-        return this.series;
-    }
-
-    setSeries(series: String) {
-        this.series = series;
-    }
 }

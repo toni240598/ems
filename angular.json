@@ -13,7 +13,7 @@
           "styleext": "scss",
           "spec" : false,
           "inlineStyle": true,
-          "module": "app"
+          "skipImport": true
         },
         "@schematics/angular:module": {
           "flat": true,

@@ -10,7 +10,7 @@ import { environment } from "src/environments/environment";
 
 export class EqTypeService extends RestApi<EqType> {
     constructor(http: HttpClient) {
-        super(http)
+        super(http);
         this.config(`${environment.host}/api/equipmenttype`, EqType);
     }
 }

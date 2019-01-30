@@ -23,13 +23,13 @@ export class DistrictComponent implements OnInit {
     this.districtService.findTokenRest().subscribe(_success => {
       forkJoin(
         this.provinceService.findAll(),
-        this.cityService.findCities(),
-        this.districtService.findAll(),
-        this.districtService.findDistricts()
+        this.cityService.findAll(),
+        this.districtService.findDistricts(),
       ).subscribe(
         _result => _result,
         _error => this.toastr.error(_error)
-      )
+      );
     }, _error => this.toastr.error(_error));
   }
+
 }

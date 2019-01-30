@@ -5,6 +5,7 @@ import { City } from './city';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { Province } from '../province/province';
 
 @Injectable({
   providedIn: 'root'
