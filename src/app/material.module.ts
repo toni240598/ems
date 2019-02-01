@@ -35,6 +35,7 @@ import {
   MatStepperModule
 } from "@angular/material";
 import { CdkTableModule } from "@angular/cdk/table";
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [],
@@ -72,7 +73,8 @@ import { CdkTableModule } from "@angular/cdk/table";
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ScrollingModule
   ]
 })
 export class MaterialModule {}

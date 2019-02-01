@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from "ngx-toastr";
 import { HttpClientModule } from '@angular/common/http';
 import { PageV1Component } from './pages/page-v1/page-v1.component';
-import { PageSetupComponent } from './pages/page-setup/page-setup.component';
 import { ProvinceComponent } from './setup/province/province.component';
 import { FormProvinceComponent } from './setup/province/form-province/form-province.component';
 import { MapComponent } from './shared/map/map.component';
@@ -23,6 +22,8 @@ import { EqTypeComponent } from './setup/eq-type/eq-type.component';
 import { PerfObjectComponent } from './setup/perf-object/perf-object.component';
 import { SensorTypeComponent } from './setup/sensor-type/sensor-type.component';
 import { SecurityComponent } from './setup/security/security.component';
+import { SetupComponent } from './setup/setup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,6 @@ import { SecurityComponent } from './setup/security/security.component';
 
     // pages
     PageV1Component,
-    PageSetupComponent,
 
     // setup
     ProvinceComponent,
@@ -51,6 +51,7 @@ import { SecurityComponent } from './setup/security/security.component';
     // other
     MapViewComponent,
     LoginComponent,
+    SetupComponent,
     ImageDirective
   ],
   imports: [
@@ -59,6 +60,8 @@ import { SecurityComponent } from './setup/security/security.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
     // tools
     ToastrModule.forRoot({
       closeButton : true,

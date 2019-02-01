@@ -625,7 +625,7 @@ display: table;
   text-align: center;
 }
 
-.mat-column-no {
+.mat-column-id {
   width : 60px;
 }
 
@@ -664,10 +664,9 @@ display: table;
   flex-direction: column;
   min-width: 300px;
   position: relative;
-  max-height: 80vh;
+  max-height: 84vh;
   overflow: auto;
   overflow-x: hidden;
-  padding-top: 60px;
 }
 
 

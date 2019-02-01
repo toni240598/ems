@@ -1,3 +1,95 @@
-<p>
-  province works!
-</p>
+<div class="setup-container">
+  <div class="card-table">
+    <div class="card-header card-header-icon" data-background-color="red">
+      <i class="material-icons">assignment</i>
+    </div>
+    <div class="card-content">
+      <h4 class="card-title">Province</h4>
+      <div class="toolbar"></div>
+
+      <div class="example-loading-shade" *ngIf="getLoading()">
+        <mat-spinner [color]="'warn'"></mat-spinner>
+      </div>
+      <!-- End Loading -->
+
+      <mat-grid-list cols="12" rowHeight="60px">
+
+        <mat-grid-tile colspan="2">
+          <mat-form-field>
+            <mat-select placeholder="Type Filter" [formControl]="filterModel">
+              <mat-option *ngFor="let filter of filters" [value]="filter.column">
+                {{filter.label}}
+              </mat-option>
+            </mat-select>
+            <span matPrefix>
+              <img style="margin-bottom: 10px;" src="../../../../assets/img/collection/search-detail.png" />&nbsp;&nbsp;
+            </span>
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile colspan="3">
+          <mat-form-field>
+            <input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="searchModel">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of getAutoCompletes()" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+            <span matPrefix>
+              <img style="margin-bottom:10px;" src="../../../../assets/img/collection/search.png" />&nbsp;&nbsp;
+            </span>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="6"></mat-grid-tile>
+
+        <mat-grid-tile>
+          <button class="btn btn-info btn-sm">
+            <i class="fa fa-plus"></i>&nbsp;&nbsp;Add
+          </button>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+      <!-- End Filter -->
+
+      <div class="table flipped">
+        <table mat-table [dataSource]="getDatasources()" matSort class="content" style="min-width:100%;"
+        (matSortChange)="sortData($event)">
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let element;let i = index">{{ i + 1 }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="label">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Label </th>
+            <td mat-cell *matCellDef="let element"> {{element.label}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="latitude">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Latitude </th>
+            <td mat-cell *matCellDef="let element"> {{element.getLat()}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="longitude">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Longitude </th>
+            <td mat-cell *matCellDef="let element"> {{element.getLng()}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="zoom">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Zoom </th>
+            <td mat-cell *matCellDef="let element"> {{element.zoom}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="columns;sticky:true"></tr>
+          <tr mat-row *matRowDef="let row; columns: columns"></tr>
+
+        </table>
+
+      </div>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+      </mat-paginator>
+    </div>
+  </div>
+</div>

@@ -9,4 +9,9 @@ export class Province extends GeoLocation {
 
   id: Number;
   label: String;
+
+  toArray(): Array<String | Number> {
+    return [this.id, this.label, this.getLat(), this.getLng(), this.zoom];
+  }
+
 }
