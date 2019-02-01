@@ -24,7 +24,17 @@ export class ProvinceComponent extends Table<Province>
   @ViewChild(MatSort) private sort;
 
   ngOnInit() {
-    this.provinceService.findTokenRest().subscribe(
+    this.subsribtion.add(this.getRestApi());
+  }
+
+  ngOnDestroy() {
+    this.subsribtion.unsubscribe();
+  }
+
+
+  // ambil data ke server
+  private getRestApi(): Subscription {
+    return this.provinceService.findTokenRest().subscribe(
       _token => {
         this.provinceService
           .findAll()
@@ -36,16 +46,6 @@ export class ProvinceComponent extends Table<Province>
       _error => this.toastr.error(_error)
     );
   }
-
-  ngOnDestroy() {
-    this.subsribtion.unsubscribe();
-  }
-
-
-  // // ambil data ke server
-  // private getRestApi(): Subscription {
-
-  // }
 
   // configuration table
   private configTable() {
